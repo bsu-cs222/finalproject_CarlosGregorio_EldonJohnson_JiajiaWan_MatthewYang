@@ -1,12 +1,13 @@
-import 'dart:convert';
+import 'dart:convert'; //将json字符转换成dart的map对象
 import 'package:http/http.dart' as http;
 
 class InfoGrab{
   final String name;
   final String type;
-  final String desc;
+  final String desc;//卡牌效果描述
 
   InfoGrab(Map<String,dynamic> cardJson):
+      //接受一个map,提取三个字段
       name=cardJson['name'],
       type=cardJson['type'],
       desc=cardJson['desc'];
