@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'searchPage.dart';
+
+import 'search_page.dart';
 
 void main() {
   runApp(const YuGiOhApp());
@@ -10,8 +11,6 @@ class YuGiOhApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: SearchPage(),
-    );
+    return MaterialApp(home: SearchPage());
   }
 }
