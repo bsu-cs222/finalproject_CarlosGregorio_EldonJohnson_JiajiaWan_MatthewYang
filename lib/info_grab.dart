@@ -12,7 +12,7 @@ class InfoGrab {
       type = cardJson['type'],
       desc = cardJson['desc'];
 
-  static Future<InfoGrab> fetchCard(String cardName) async {
+  static Future<InfoGrab?> fetchCard(String cardName) async {
     final url = Uri.parse(
       'https://db.ygoprodeck.com/api/v7/cardinfo.php?name=${Uri.encodeComponent(cardName)}',
     );
@@ -21,9 +21,16 @@ class InfoGrab {
 
     if (response.statusCode == 200) {
       final jsonData = jsonDecode(response.body);
-      final cardJson = jsonData['data'][0];
-      return InfoGrab(cardJson);
+
+      if (jsonData['data'] != null && jsonData['data'].isNotEmpty) {
+        return InfoGrab(jsonData['data'][0]);
+      }
+      if (jsonData['data'] == null || jsonData['data'].isEmpty) {
+        return null;
+      }
     }
-    if (response.statusCode != 200) {}
+    if (response.statusCode != 200) {
+      return null;
+    }
   }
 }

@@ -20,20 +20,20 @@ class _SearchPageState extends State<SearchPage> {
       _cardInfo = null;
     });
 
-    try {
-      final result = await InfoGrab.fetchCard(_controller.text.trim());
+    final result = await InfoGrab.fetchCard(_controller.text.trim());
+
+    if (result != null) {
       setState(() {
         _cardInfo = result;
       });
-    } catch (e) {
+    } else {
       setState(() {
-        _errorMessage = 'Card not found.Please check the name and try again.';
-      });
-    } finally {
-      setState(() {
-        _isLoading = false;
+        _errorMessage = 'Card not found. Please check the name and try again.';
       });
     }
+    setState(() {
+      _isLoading = false;
+    });
   }
 
   @override
