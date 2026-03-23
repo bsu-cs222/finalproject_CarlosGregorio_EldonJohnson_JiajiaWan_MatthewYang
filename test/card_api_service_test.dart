@@ -1,9 +1,10 @@
 import 'dart:io';
 
-import 'package:finalproject/info_grab.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
+
+import '../lib/card_api_service.dart';
 
 void main() {
   group('CardApiService Test', () {

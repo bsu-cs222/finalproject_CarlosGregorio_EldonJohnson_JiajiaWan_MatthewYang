@@ -1,5 +1,6 @@
-import 'package:finalproject/info_grab.dart';
 import 'package:flutter_test/flutter_test.dart';
+
+import '../lib/card.dart';
 
 void main() {
   group('Card Domain Model Test', () {
