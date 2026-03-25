@@ -3,8 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import '../lib/card.dart';
 
 void main() {
-  group('Card Domain Model Test', () {
-    test('Complete JSON', () {
+  group('.fromJson', () {
+    test('all fields specified', () {
       final Map<String, dynamic> completeJson = {
         'name': 'Dark Magician',
         'type': 'Normal Monster',

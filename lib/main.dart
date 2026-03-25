@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'search_page.dart';
+import 'card.dart';
 
 void main() {
   runApp(const YuGiOhApp());
